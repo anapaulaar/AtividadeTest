@@ -26,6 +26,7 @@ var produtos = [
 }
 ]
 
+//Filtrando Estoque
 function filtrarEstoque (todosProdutos){
     return todosProdutos.filter(produto => produto.estoque)
 }
@@ -33,8 +34,10 @@ function filtrarEstoque (todosProdutos){
 filtrarEstoque (produtos)
     .forEach(produto => console.log(`Produtos com estoque: ${produto.nome} - preço: ${produto.preco}`));
 
+//Ordenando preços
 produtos.sort(function (a, b){
     return a.preco - b.preco;
 });
 
 console.log(produtos)
+
