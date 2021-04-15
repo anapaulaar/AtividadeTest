@@ -1,3 +1,4 @@
+var contador = 0
 var produtos = [
 { 
     nome: 'Amendoim',
@@ -26,18 +27,25 @@ var produtos = [
 }
 ]
 
-//Filtrando Estoque
 function filtrarEstoque (todosProdutos){
-    return todosProdutos.filter(produto => produto.estoque)
+    return todosProdutos.filter(produto => produto.estoque > 0)
 }
 
 filtrarEstoque (produtos)
-    .forEach(produto => console.log(`Produtos com estoque: ${produto.nome} - preço: ${produto.preco}`));
+    .forEach(produto => console.log(`Produtos com estoque: ${produto.nome} - preço: ${produto.preco}`))
 
-//Ordenando preços
+// Ordenando preços
 produtos.sort(function (a, b){
-    return a.preco - b.preco;
-});
+    return a.preco - b.preco
+})
 
 console.log(produtos)
 
+function somarEstoque(todosProdutos){
+    function contar(s){
+        contador += s.preco * s.estoque
+    }
+}
+
+//console.log(contador)
+    
