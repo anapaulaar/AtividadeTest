@@ -1,3 +1,4 @@
+var contador = 0
 var produtos = [
 { 
     nome: 'Amendoim',
@@ -41,3 +42,6 @@ produtos.sort(function (a, b){
 
 console.log(produtos)
 
+var total = produtos.reduce((total, valor) => total + valor.preco, 0)
+
+console.log(total)
